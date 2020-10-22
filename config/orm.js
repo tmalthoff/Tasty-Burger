@@ -44,7 +44,7 @@ var orm = {
       cb(result);
     });
   },
-  create: function (table, cols, vals, cb) {
+  insertOne: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -81,27 +81,8 @@ var orm = {
 
       cb(result);
     });
-  },
-  insertOne: function (table, condition, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
-  
-
-    connection.query(queryString, vals, function (err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    
-    });
   }
+ 
 };
 
 // Export the orm object for the model (cat.js).

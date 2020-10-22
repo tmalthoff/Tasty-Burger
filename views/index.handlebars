@@ -1,0 +1,33 @@
+<h1 class="title">That is a Tasty Burger!</h1>
+<h2 class="title">You should crush these burgers!</h2>
+<ul class="list-group">
+    {{#each burger}}
+    {{#unless this.devoured}}
+    <li class="list-group-item">{{this.id}}. {{this.burger_name}}</li>
+
+    <br>
+    <button class="devour" data-id="{{id}}">Smash this Burg!</button>
+    <br>
+
+
+    {{/unless}}
+    {{/each}}
+
+
+
+</ul>
+
+
+<h2 class="title">Here are the Burgeres you Crushed!</h2>
+
+<ul class="list-group">
+    {{#each burger}}
+    {{#if this.devoured}}
+    
+    <li class="list-group-item">{{this.id}}. {{this.burger_name}}</li>
+    
+    {{/if}}
+    {{/each}}
+
+
+</ul>

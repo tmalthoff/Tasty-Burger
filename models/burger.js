@@ -9,14 +9,15 @@ let burger = {
   },
   // The variables cols and vals are arrays.
   
-  updateOne: function(objColVals, condition, cb) {
-    orm.update("burgers", objColVals, condition, function(res) {
+  updateOne: function(id, cb) {
+      var condition = "id=" + id;
+    orm.update("burgers", { devoured: true }, condition, function(res) {
       cb(res);
     });
   },
   
-  insertOne: function(condition, cb) {
-    orm.insertOne("burgers", condition, function(res) {
+  insertOne: function(name, cb) {
+    orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], function(res) {
       cb(res);
     });
   }
