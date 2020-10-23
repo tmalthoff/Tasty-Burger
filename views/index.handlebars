@@ -1,12 +1,16 @@
 <h1 class="title">That is a Tasty Burger!</h1>
 <h2 class="title">You should crush these burgers!</h2>
+
+
 <ul class="list-group">
     {{#each burger}}
     {{#unless this.devoured}}
     <li class="list-group-item">{{this.id}}. {{this.burger_name}}</li>
 
     <br>
-    <button class="devour" data-id="{{id}}">Smash this Burg!</button>
+   
+    <button class="devour-burg" data-id="{{id}}" data-newEat="{{devoured}}">Smash this Burg!</button>
+   
     <br>
 
 
@@ -31,3 +35,28 @@
 
 
 </ul>
+
+<h2 class="title">Add a burger you would like to eat!</h2>
+<form class="make-form">
+
+    <div class="form-group">
+        <label for="newMonster">Burger Name:</label>
+        <input type="text" size="35" id="newMonster" name="burger_name">
+    </div>
+<br>
+<br>
+
+    <div class="form-group">
+        <label for="devour">Has this burger been crushed yet?</label>
+        <br>
+        <br>
+        <input type="radio" name="devoured" value="1" > Devoured!
+        <br>
+        <br>
+        <input type="radio" name="devoured" value="0"checked> Have not been eaten yet!
+        <br>
+        <br>
+    </div>
+
+    <button type="submit">Create Monster</button>
+</form>
