@@ -5,6 +5,8 @@
   ## Description
   An app that allows you to add new burgers and eat them
 
+  ![TastyBurger](Tasty-burger)
+
   ## Table of Contents
   [title](#title)
   [description](#description)
